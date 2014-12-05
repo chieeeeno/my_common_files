@@ -1,0 +1,168 @@
+#SASS勉強会資料
+
+##SASSって何すか？
+###SASSとは
+Webページのレイアウトや修飾情報の指定に用いられるCSS(Cascading Style Sheet)を記述するための言語(メタ言語)の一つ。
+また、同言語で記述したファイルをCSSファイルへ変換するソフトウェア。  
+プログラミング言語の仕様を取り入れて効率的にCSSを定義できるようにした言語で、
+変数や算術演算、セレクタ指定の入れ子(ネスト)、外部ファイルの読み込み、複数のCSS定義の結合(ミックスイン)など、
+CSSにはない機能を利用することができる。
+
+簡単に言うと・・・・
+複雑なCSSの構造を「少ない記述」で「簡単」に書けるCSSみたいな言語
+
+
+========================================================
+
+##SASSのメリット・デメリット
+・メリット
+プログラマブルに書いていける
+変数などを利用し、一括で値を変更することが可能である
+関数（mixin）を利用して面倒な書き方を簡略化することが可能である
+セレクタの継承を利用し、見やすく、かつ、コード量が少ない書き方が可能である
+複数ファイルに分けておき、開発時には見やすくコンパイル時には1ファイルに、ということが可能である（@import）
+
+・デメリット
+Sass（SCSS）のコンパイル環境が必要である
+Sass（SCSS）に対応したエディタ（統合開発環境）を用意した方がいい
+
+
+========================================================
+
+##SASSの書き方
+SASSファイルの記述方法は大きく以下の記法に分かれます。
+1.SCSS記法
+2.SASS記法
+
+
+###SASS記法とSCSS記法の違いについて
+
+####SCSS(.scss)記法の場合
+(例)
+header{
+	position:relative;
+	height:80px;
+	h1{
+		position:absolute;
+		top:0;
+		left:0;
+	}
+	ul.headBtn{
+		position:absolute;
+		top:0;
+		right:0;
+		li{
+			float:left;
+			margin:0 10px 0 0;
+		}
+	}
+}
+
+(出力結果)
+header {
+  position: relative;
+  height: 80px;
+}
+header h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+header ul.headBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+header ul.headBtn li {
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+{}内に別のセレクタを入れ子にして記述することで、
+深い階層のセレクタを指定したCSSを出力する。
+
+いちいちコピペしなくていい！楽チン！！
+
+
+
+####SASS(.sass)記法の場合
+(例)
+header
+	position:relative;
+	height:80px;
+	h1
+        position:absolute;
+		top:0;
+		left:0;
+	ul.headBtn
+		position:absolute;
+		top:0;
+		right:0;
+		li
+			float:left;
+			margin:0 10px 0 0;
+
+
+(出力結果)
+header {
+  position: relative;
+  height: 80px;
+}
+header h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+header ul.headBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+header ul.headBtn li {
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+            
+SCSSと同様に入れ子構造で記述ができるが、{}で囲まずに
+”インデントをつけるだけ”で構造を定義できる。もっと楽チン！
+ただし、インデントが崩れてると出力結果もガタガタに・・・(汗)
+※個人的には「SCSS記法」の方がわかりやすいです。
+
+
+
+========================================================
+
+
+
+
+
+##SASSのコンパイル環境の構築
+
+
+###rubyのインストール
+SASSは「Ruby」というプログラム言語により動作をしているため、
+「Ruby」の実行環境をPCにインストールする必要があります。
+
+RubyInstaller for Windows(http://rubyinstaller.org/)の
+DownlaodよりRubyInstallerをダウンロード。
+
+
+
+
+
+###Compassのインストール
+####コマンドプロンプトのプロキシ設定
+
+##デモ：実際に動かしてみる
+
+
+##SASS(Compass)と連携する便利ツール
+
+###高機能なのがお好きな方は【Grunt】
+####Gruntのインストール方法
+#####node.jsのインストール
+#####Gruntとモジュールのインストール
+#####Gruntfile.jsの作成
+
+###手軽にSASSりたい方は【Koala】
