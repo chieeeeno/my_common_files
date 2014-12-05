@@ -1,4 +1,12 @@
 /**
+ * Utility functions
+ * @author Tomoki Kikuchi
+ * @description よく使いそうなjs処理を集めたファイルです。
+ * update:20141204
+ */
+
+
+/**
  * デバッグ用関数
  * debugMode = trueの時にコンソールに文字列を出力
  * ex.) log('出力したい文字列');
