@@ -141,3 +141,14 @@ ua = {
     iPhone: navigator.userAgent.indexOf('iPhone') != -1,
     android: navigator.userAgent.indexOf('Android') != -1 && navigator.userAgent.indexOf('Mobile') != -1,
 }
+
+/**
+ * 全置換：全ての文字列 org を dest に置き換える 
+ * @param {String} org 置換したいの文字列
+ * @param {String} dest 置換後の文字列
+ * ex.) 変数「value」内の'o'を'*'に置き換える
+ *      value.replaceAll("o", "*");  
+ */
+String.prototype.replaceAll = function (org, dest){  
+  return this.split(org).join(dest);  
+}  
