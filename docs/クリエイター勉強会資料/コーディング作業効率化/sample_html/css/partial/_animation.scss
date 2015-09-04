@@ -1,0 +1,79 @@
+
+//animation
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes $animation-name {
+        @content;
+    }
+    @-moz-keyframes $animation-name {
+        @content;
+    } 
+    @keyframes $animation-name {
+        @content;
+    }
+}
+
+@mixin animation($animation-name) {
+    -webkit-animation: $animation-name;
+    -moz-animation: $animation-name;
+    animation: $animation-name;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+
+//font-size
+@mixin font-size($size, $base: 16) {
+    font-size: $size + px;
+    font-size: ($size / $base) + rem;
+}
+
+
+//text-shadow
+@mixin text-shadow-black($opacity: 0.4){
+    text-shadow: 0 1px 0 rgba(#000, $opacity);
+}
+
+@mixin text-shadow-white($opacity: 1){
+    text-shadow: 0 1px 0 rgba(#FFF, $opacity);
+}
+
+
+//position
+@mixin absolute-top-left($top: 0, $left: 0) {
+    position: absolute;
+    top: $top;
+    left: $left;
+}
+
+@mixin absolute-top-right($top: 0, $right: 0) {
+    position: absolute;
+    top: $top;
+    right: $right;
+}
+
+@mixin absolute-bottom-left($bottom: 0, $left: 0) {
+    position: absolute;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin absolute-bottom-right($bottom: 0, $right: 0) {
+    position: absolute;
+    bottom: $bottom;
+    right: $right;
+}
+
+
+//gradation
+@mixin gradient-top-lighten($color:$hoge, $lighten:10){
+    background-color: $color;
+    @include background-image(linear-gradient(lighten($color, $lighten) 0%, $color 100%));
+    @include filter-gradient(lighten($color, $lighten), $color, vertical);
+}
+
+@mixin gradient-top-darken($color:$hoge, $darken:10){
+    background-color: $color;
+    @include background-image(linear-gradient(darken($color, $darken) 0%, $color 100%));
+    @include filter-gradient(darken($color, $darken), $color, vertical);
+}

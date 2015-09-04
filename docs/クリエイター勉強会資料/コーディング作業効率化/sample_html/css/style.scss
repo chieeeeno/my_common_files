@@ -1,0 +1,18 @@
+@import "compass/css3";
+@import "css/partial/_reset.scss";
+@import "css/partial/_common.scss";
+@import "css/partial/_fontsize.scss";
+
+
+//mixin setting
+@mixin fontsize($size: 14, $baseFs: 10) {
+    font-size: $size + px;
+    font-size: ($size / $baseFs) * 1rem;
+}
+
+@mixin no-appearance(){
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+

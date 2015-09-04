@@ -1,0 +1,17 @@
+/*-----------------------------------------
+* loading
+*-----------------------------------------*/
+.loader{
+    width: 100px;
+    height: 100px;
+    background: rgba(0,0,0,0.5);
+    @include border-radius(10px);
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    position: absolute;
+    .loaderImage{
+        margin: 16px auto 0 auto;
+    }
+}

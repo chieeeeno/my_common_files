@@ -1,0 +1,21 @@
+{
+  "name": "sample",
+  "version": "0.0.0",
+  "description": "sample",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tomoki kikuchi",
+  "license": "BSD",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-autoprefixer": "^3.0.3",
+    "grunt-browser-sync": "^2.1.3",
+    "grunt-contrib-compass": "~0.7.1",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-jsdoc-plugin": "*",
+    "grunt-remove-logging": "*"
+  }
+}
